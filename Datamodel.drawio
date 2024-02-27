@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-02-27T11:16:42.990Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/112.0" etag="hYRdEvTdpCCOEHSkH9u8" version="23.1.6" type="github">
+<mxfile host="app.diagrams.net" modified="2024-02-27T11:20:33.590Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/112.0" etag="yHZSABlg2Fx1Fi-9eLuD" version="23.1.6" type="github">
   <diagram name="Страница — 1" id="eV7tQtSZALF4OR5hqJvE">
     <mxGraphModel dx="2058" dy="946" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -492,7 +492,7 @@
             <mxRectangle width="30" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="30f3yvQTXB0zst5bIfW9-123" value="shipid: INTEGER NOT NULL" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;" vertex="1" parent="30f3yvQTXB0zst5bIfW9-121">
+        <mxCell id="30f3yvQTXB0zst5bIfW9-123" value="spaceshipid: INTEGER" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;" vertex="1" parent="30f3yvQTXB0zst5bIfW9-121">
           <mxGeometry x="30" width="190" height="30" as="geometry">
             <mxRectangle width="190" height="30" as="alternateBounds" />
           </mxGeometry>
@@ -505,7 +505,7 @@
             <mxRectangle width="30" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="30f3yvQTXB0zst5bIfW9-126" value="controllerid: INTEGER NOT NULL" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;" vertex="1" parent="30f3yvQTXB0zst5bIfW9-124">
+        <mxCell id="30f3yvQTXB0zst5bIfW9-126" value="controllerid: INTEGER" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;" vertex="1" parent="30f3yvQTXB0zst5bIfW9-124">
           <mxGeometry x="30" width="190" height="30" as="geometry">
             <mxRectangle width="190" height="30" as="alternateBounds" />
           </mxGeometry>
@@ -534,7 +534,7 @@
             <mxRectangle width="30" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="30f3yvQTXB0zst5bIfW9-136" value="shipid: INTEGER NOT NULL" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;" vertex="1" parent="30f3yvQTXB0zst5bIfW9-134">
+        <mxCell id="30f3yvQTXB0zst5bIfW9-136" value="spaceshipid: INTEGER NOT NULL" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;" vertex="1" parent="30f3yvQTXB0zst5bIfW9-134">
           <mxGeometry x="30" width="190" height="30" as="geometry">
             <mxRectangle width="190" height="30" as="alternateBounds" />
           </mxGeometry>
