@@ -11,22 +11,25 @@ DROP TABLE IF EXISTS place CASCADE;
 DROP TABLE IF EXISTS planet CASCADE;
 DROP TABLE IF EXISTS species CASCADE;
 DROP TABLE IF EXISTS controller CASCADE;
+DROP TABLE IF EXISTS menace CASCADE;
+DROP TABLE IF EXISTS pathmenace CASCADE;
+DROP TYPE IF EXISTS menaces CASCADE;
+
+CREATE TYPE menaces AS ENUM ('BLACK_HOLE','REEF','SHALLOW');
 
 -- creating tables
 CREATE TABLE IF NOT EXISTS place(
 	id SERIAL PRIMARY KEY,
-	coordinates POINT NOT NULL,
+	x INTEGER NOT NULL,
+	y INTEGER NOT NULL,
+	z INTEGER NOT NULL,
 	galaxy TEXT NOT NULL
 );
-CREATE TABLE IF NOT EXISTS shallow(
+CREATE TABLE IF NOT EXISTS menace(
 	id SERIAL PRIMARY KEY,
 	placeid INTEGER REFERENCES place(id) NOT NULL,
-	complexity INTEGER NOT NULL
-);
-CREATE TABLE IF NOT EXISTS reef(
-	id SERIAL PRIMARY KEY,
-	placeid INTEGER REFERENCES place(id) NOT NULL,
-	complexity INTEGER NOT NULL
+	complexity INTEGER NOT NULL,
+	menacetype menaces NOT NULL
 );
 CREATE TABLE IF NOT EXISTS planet(
 	id SERIAL PRIMARY KEY,
@@ -35,16 +38,14 @@ CREATE TABLE IF NOT EXISTS planet(
 );
 CREATE TABLE IF NOT EXISTS route(
 	id SERIAL PRIMARY KEY,
-	destination INTEGER REFERENCES planet(id) NOT NULL
+	startid INTEGER REFERENCES planet(id),
+	endid INTEGER REFERENCES planet(id) NOT NULL,
+	complexity INTEGER NOT NULL
 );
-CREATE TABLE IF NOT EXISTS routeshallow(
-	shallowid INTEGER REFERENCES shallow(id),
+CREATE TABLE IF NOT EXISTS routemenace(
+	menaceid INTEGER REFERENCES menace(id),
 	routeid INTEGER REFERENCES route(id) NOT NULL,
-	PRIMARY KEY (shallowid, routeid)
-);
-CREATE TABLE IF NOT EXISTS routereef(
-	reefid INTEGER REFERENCES reef(id) NOT NULL,
-	routeid INTEGER REFERENCES route(id) NOT NULL
+	PRIMARY KEY (menaceid, routeid)
 );
 CREATE TABLE IF NOT EXISTS species(
 	id SERIAL PRIMARY KEY,
@@ -64,22 +65,19 @@ CREATE TABLE IF NOT EXISTS spaceship(
 	creatorsid INTEGER REFERENCES species(id) NOT NULL
 );
 
-INSERT INTO place(coordinates, galaxy)
+INSERT INTO place(x, y, z, galaxy)
 VALUES
-	(POINT(1782, 234), 'Milky Way'),
-	(POINT(1272, 953), 'Milky Way'),
-	(POINT(-143, 352), 'Milky Way'),
-	(POINT(52, 248), 'Milky Way'),
-	(POINT(2194, 192), 'Milky Way'),
-	(POINT(-125, 532), 'Milky Way');
+	(1782, 234, 100, 'Milky Way'),
+	(1272, 953, 126, 'Milky Way'),
+	(-143, 352, 52, 'Milky Way'),
+	(52, 248, 72, 'Milky Way'),
+	(2194, 192, 83, 'Milky Way'),
+	(-125, 532, 193, 'Milky Way');
 
-INSERT INTO shallow(placeid, complexity)
+INSERT INTO menace(placeid, complexity, menacetype)
 VALUES
-	(1,425);
-
-INSERT INTO reef(placeid, complexity)
-VALUES
-	(2, 382);
+	(1, 425, 'REEF'),
+	(2, 382, 'SHALLOW');
 
 INSERT INTO planet(placeid, name)
 VALUES
@@ -88,9 +86,9 @@ VALUES
 	(5, 'Neptune'),
 	(6, 'Earth');
 
-INSERT INTO route(destination)
+INSERT INTO route(startid, endid, complexity)
 VALUES
-	(3);
+	(NULL, 3, 173);
 
 INSERT INTO species(name, planetid)
 VALUES
