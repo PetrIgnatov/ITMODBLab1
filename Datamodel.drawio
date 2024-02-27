@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-02-27T11:13:36.356Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/112.0" etag="_5t9Qfc8FBXhEto_OWgd" version="23.1.6" type="github">
+<mxfile host="app.diagrams.net" modified="2024-02-27T11:16:42.990Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/112.0" etag="hYRdEvTdpCCOEHSkH9u8" version="23.1.6" type="github">
   <diagram name="Страница — 1" id="eV7tQtSZALF4OR5hqJvE">
-    <mxGraphModel dx="2049" dy="1081" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2058" dy="946" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -510,18 +510,6 @@
             <mxRectangle width="190" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="30f3yvQTXB0zst5bIfW9-128" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;startArrow=ERmandOne;rounded=0;" edge="1" parent="1" source="30f3yvQTXB0zst5bIfW9-63" target="30f3yvQTXB0zst5bIfW9-117">
-          <mxGeometry width="100" height="100" relative="1" as="geometry">
-            <mxPoint x="1550" y="530" as="sourcePoint" />
-            <mxPoint x="1650" y="430" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="30f3yvQTXB0zst5bIfW9-129" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;startArrow=ERmandOne;rounded=0;" edge="1" parent="1" source="30f3yvQTXB0zst5bIfW9-73" target="30f3yvQTXB0zst5bIfW9-117">
-          <mxGeometry width="100" height="100" relative="1" as="geometry">
-            <mxPoint x="1629" y="520" as="sourcePoint" />
-            <mxPoint x="1729" y="420" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="30f3yvQTXB0zst5bIfW9-130" value="SPACESHIPROUTE" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;" vertex="1" parent="1">
           <mxGeometry x="950" y="300" width="220" height="120" as="geometry" />
         </mxCell>
@@ -574,6 +562,18 @@
           <mxGeometry width="100" height="100" relative="1" as="geometry">
             <mxPoint x="1190" y="510" as="sourcePoint" />
             <mxPoint x="1290" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="30f3yvQTXB0zst5bIfW9-142" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;startArrow=ERzeroToOne;rounded=0;" edge="1" parent="1" source="30f3yvQTXB0zst5bIfW9-73" target="30f3yvQTXB0zst5bIfW9-117">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="900" y="600" as="sourcePoint" />
+            <mxPoint x="1000" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="30f3yvQTXB0zst5bIfW9-144" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;startArrow=ERzeroToOne;rounded=0;" edge="1" parent="1" source="30f3yvQTXB0zst5bIfW9-63" target="30f3yvQTXB0zst5bIfW9-117">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="900" y="600" as="sourcePoint" />
+            <mxPoint x="1000" y="500" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
