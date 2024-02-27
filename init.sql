@@ -12,7 +12,9 @@ DROP TABLE IF EXISTS planet CASCADE;
 DROP TABLE IF EXISTS species CASCADE;
 DROP TABLE IF EXISTS controller CASCADE;
 DROP TABLE IF EXISTS menace CASCADE;
-DROP TABLE IF EXISTS pathmenace CASCADE;
+DROP TABLE IF EXISTS routemenace CASCADE;
+DROP TABLE IF EXISTS spaceshiproute CASCADE;
+DROP TABLE IF EXISTS spaceshipcontroller CASCADE;
 DROP TYPE IF EXISTS menaces CASCADE;
 
 CREATE TYPE menaces AS ENUM ('BLACK_HOLE','REEF','SHALLOW');
@@ -59,10 +61,28 @@ CREATE TABLE IF NOT EXISTS controller(
 );
 CREATE TABLE IF NOT EXISTS spaceship(
 	id SERIAL PRIMARY KEY,
-	routeid INTEGER REFERENCES route(id) NOT NULL,
 	name TEXT NOT NULL,
-	controllerid INTEGER REFERENCES controller(id),
 	creatorsid INTEGER REFERENCES species(id) NOT NULL
+);
+CREATE TABLE IF NOT EXISTS routemenace(
+	menaceid INTEGER REFERENCES menace(id),
+	routeid INTEGER REFERENCES route(id) NOT NULL,
+	PRIMARY KEY (menaceid, routeid)
+);
+CREATE TABLE IF NOT EXISTS routemenace(
+	menaceid INTEGER REFERENCES menace(id),
+	routeid INTEGER REFERENCES route(id) NOT NULL,
+	PRIMARY KEY (menaceid, routeid)
+);
+CREATE TABLE IF NOT EXISTS spaceshiproute(
+	spaceshipid INTEGER REFERENCES spaceship(id) NOT NULL,
+	routeid INTEGER REFERENCES route(id) NOT NULL,
+	PRIMARY KEY (spaceshipid, routeid)
+);
+CREATE TABLE IF NOT EXISTS spaceshipcontroller(
+	spaceshipid INTEGER REFERENCES spaceship(id) NOT NULL,
+	controllerid INTEGER REFERENCES controller(id) NOT NULL,
+	PRIMARY KEY (spaceshipid, controllerid)
 );
 
 INSERT INTO place(x, y, z, galaxy)
@@ -106,9 +126,22 @@ INSERT INTO routemenace(menaceid, routeid)
 VALUES
 	(1, 2);
 
-INSERT INTO spaceship(routeid, name, controllerid, creatorsid)
+INSERT INTO spaceship(name,creatorsid)
 VALUES
-	(1, 'Discovery', NULL, 1),
-	(2, 'Nowac', 3, 2);
+	('Discovery', 1),
+	('Nowac', 2),
+	('Uxno', 2);
 
+INSERT INTO spaceshipcontroller(spaceshipid, controllerid)
+VALUES
+	(2, 3),
+	(3, 2);
+
+INSERT INTO spaceshiproute(spaceshipid, routeid)
+VALUES
+	(1, 1),
+	(2, 2),
+	(3, 2);
+SELECT * FROM spaceship JOIN spaceshipcontroller ON spaceship.id = spaceshipcontroller.spaceshipid
+JOIN controller ON spaceshipcontroller.controllerid = controller.id WHERE controller.speciesid != spaceship.creatorsid;
 COMMIT;
