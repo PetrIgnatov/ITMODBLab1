@@ -88,14 +88,27 @@ VALUES
 
 INSERT INTO route(startid, endid, complexity)
 VALUES
-	(NULL, 3, 173);
+	(NULL, 3, 173),
+	(2, 4, 720);
 
 INSERT INTO species(name, planetid)
 VALUES
-	('Humans', 4);
+	('Humans', 4),
+	('Marsians', 2);
+
+INSERT INTO controller(name, speciesid) 
+VALUES
+	('Yuri Gagarin', 1),
+	('Neil Armstrong', 1),
+	('Alpha Iwazor', 2);
+
+INSERT INTO routemenace(menaceid, routeid)
+VALUES
+	(1, 2);
 
 INSERT INTO spaceship(routeid, name, controllerid, creatorsid)
 VALUES
-	(1, 'Discovery', NULL, 1);
+	(1, 'Discovery', NULL, 1),
+	(2, 'Nowac', 3, 2);
 
 COMMIT;
